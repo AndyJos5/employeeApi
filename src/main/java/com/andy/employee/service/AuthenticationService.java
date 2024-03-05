@@ -3,11 +3,14 @@ package com.andy.employee.service;
 import com.andy.employee.model.AuthenticationResponse;
 import com.andy.employee.model.User;
 import com.andy.employee.repository.UserRepository;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 @Service
 public class AuthenticationService {
@@ -68,5 +71,6 @@ public class AuthenticationService {
         return new AuthenticationResponse(jwt, "User login was successful");
 
     }
+
 
 }
